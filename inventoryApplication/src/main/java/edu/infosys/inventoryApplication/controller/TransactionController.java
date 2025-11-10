@@ -66,7 +66,7 @@ public class TransactionController {
     }
     
     
-    @GetMapping("/analysis/{id}")
+    @GetMapping("/analysis/{productId}")
     public List<Double> getDemandByProduct(@PathVariable String productId){
     		return transactionDao.getDemandByProduct(productId);
     }
