@@ -7,7 +7,7 @@ A full-stack inventory management application built with Spring Boot on the back
 - **Frontend:** React.js, CSS3
 - **Backend:** Java, Spring Boot
 - **Database:** MySQL (Spring Data JPA)
-- **Authentication:** JWT (JSON Web Token)
+- **Security:** BCrypt encryption
 
 ## Features
 
@@ -15,12 +15,11 @@ A full-stack inventory management application built with Spring Boot on the back
 - Category management
 - Stock level tracking
 - Inventory transaction management
+- Stock issue and price update operations
+- Sales analysis dashboard with visual insights
 - REST API with Spring Boot
-- JWT based authentication
+- Role based access with BCrypt encryption
 - Responsive UI with React.js
-
-
-
 
 ## Screenshots
 
@@ -31,7 +30,7 @@ A full-stack inventory management application built with Spring Boot on the back
 ![Register](screenshots/register.png)
 
 ### Product Addition
-![Products](screenshots/add-product.png)
+![Add Product](screenshots/add-product.png)
 
 ### Product List
 ![Products](screenshots/products.png)
@@ -48,16 +47,14 @@ A full-stack inventory management application built with Spring Boot on the back
 ### Sales Analysis Dashboard
 ![Dashboard](screenshots/dashboard.png)
 
-
-
 ## Project Structure
 
 ```
 inventoryApplication/
-├── inventory-front/         # React.js frontend
+├── inventory-front/              # React.js frontend
 │   ├── src/
 │   └── package.json
-└── inventoryApplication/    # Spring Boot backend
+└── inventoryApplication/         # Spring Boot backend
     ├── src/
     │   └── main/java/edu/infosys/inventoryApplication
     │       ├── bean/
@@ -77,9 +74,9 @@ inventoryApplication/
 
 ### Backend Setup
 
-Open `inventoryApplication` in IntelliJ IDEA or Eclipse.
+Open `inventoryApplication` folder in VS Code or IntelliJ IDEA.
 
-Configure `application.properties`:
+Configure `src/main/resources/application.properties`:
 
 ```properties
 spring.datasource.url=jdbc:mysql://localhost:3306/inventory_db
@@ -88,17 +85,23 @@ spring.datasource.password=your_mysql_password
 spring.jpa.hibernate.ddl-auto=update
 ```
 
-Run the Spring Boot application — backend starts on `http://localhost:8080`
+Run the Spring Boot application:
+
+```bash
+mvn spring-boot:run
+```
+
+Backend starts on `http://localhost:8080`
 
 ### Frontend Setup
 
 ```bash
 cd inventory-front
 npm install
-npm run dev
+npm start
 ```
 
-Open `http://localhost:5173` in your browser.
+Open `http://localhost:3000` in your browser.
 
 
 ## Author
