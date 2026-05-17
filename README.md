@@ -59,11 +59,12 @@ inventoryApplication/
 │   └── package.json
 └── inventoryApplication/    # Spring Boot backend
     ├── src/
-    │   └── main/java/com/inventory/
+    │   └── main/java/edu/infosys/inventoryApplication
+    │       ├── bean/
     │       ├── controller/
+    │       ├── config/
     │       ├── service/
-    │       ├── repository/
-    │       └── model/
+    │       └── dao/
     └── pom.xml
 ```
 
@@ -98,10 +99,6 @@ npm run dev
 ```
 
 Open `http://localhost:5173` in your browser.
-
-## Presentation
-
-A detailed project presentation covering architecture, features, and implementation is available in `SmartshelfX_ppt.pptx` in the root folder.
 
 
 ## Author
