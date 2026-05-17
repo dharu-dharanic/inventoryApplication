@@ -19,6 +19,37 @@ A full-stack inventory management application built with Spring Boot on the back
 - JWT based authentication
 - Responsive UI with React.js
 
+
+
+
+## Screenshots
+
+### Login
+![Login](screenshots/login.png)
+
+### Register
+![Register](screenshots/register.png)
+
+### Product Addition
+![Products](screenshots/add-product.png)
+
+### Product List
+![Products](screenshots/products.png)
+
+### Stock Issued Transactions
+![Transactions](screenshots/transactions.png)
+
+### Update Price
+![Update Price](screenshots/update-price.png)
+
+### Issue Stock
+![Issue](screenshots/issue.png)
+
+### Sales Analysis Dashboard
+![Dashboard](screenshots/dashboard.png)
+
+
+
 ## Project Structure
 
 ```
@@ -67,34 +98,6 @@ npm run dev
 ```
 
 Open `http://localhost:5173` in your browser.
-
-
-## Screenshots
-
-### Login
-![Login](screenshots/login.png)
-
-### Register
-![Register](screenshots/register.png)
-
-### Product Addition
-![Products](screenshots/add-product.png)
-
-### Product List
-![Products](screenshots/products.png)
-
-### Stock Issued Transactions
-![Transactions](screenshots/transactions.png)
-
-### Update Price
-![Update Price](screenshots/update-price.png)
-
-### Issue Stock
-![Issue](screenshots/issue.png)
-
-### Sales Analysis Dashboard
-![Dashboard](screenshots/dashboard.png)
-
 
 ## Presentation
 
