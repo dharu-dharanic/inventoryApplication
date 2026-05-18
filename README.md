@@ -2,6 +2,11 @@
 
 A full-stack inventory management application built with Spring Boot on the backend and React.js on the frontend. Designed to manage products, categories, stock levels, and inventory transactions efficiently.
 
+## Demo
+
+▶️ [Watch Demo Video](https://drive.google.com/file/d/1Q6t4C2BZ3_UAVyork-tMIJqhEByV9Txe/view?usp=sharing)
+
+
 ## Tech Stack
 
 - **Frontend:** React.js, CSS3
@@ -11,11 +16,11 @@ A full-stack inventory management application built with Spring Boot on the back
 
 ## Features
 
-- Add, edit, and delete products
-- Category management
+- Add, edit, delete and view products
+- Category management using SKU
 - Stock level tracking
 - Inventory transaction management
-- Stock issue and price update operations
+- Stock issue, purchase and price update operations
 - Sales analysis dashboard with visual insights
 - REST API with Spring Boot
 - Role based access with BCrypt encryption
