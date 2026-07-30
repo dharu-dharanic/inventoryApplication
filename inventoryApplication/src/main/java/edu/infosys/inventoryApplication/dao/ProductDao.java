@@ -11,4 +11,5 @@ public interface ProductDao  {
 	 public void removeProduct(String id);
 	 public List<Product> showAllProducts();
 	 public Double findReorderLevelByProductId(String id);
+	 public List<Product> findProductsByVendorId(String vendorId);
 }

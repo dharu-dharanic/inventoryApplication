@@ -45,6 +45,11 @@ public class ProductController {
 		Product product=productDao.findProductById(id);
 		return product;
 	}
+
+	@GetMapping("/product/vendor/{vendorId}")
+	public List<Product> showProductsByVendor(@PathVariable String vendorId) {
+		return productDao.findProductsByVendorId(vendorId);
+	}
 	
 	@DeleteMapping("/product/{id}")
 	public void deleteAProduct(@PathVariable String id) {

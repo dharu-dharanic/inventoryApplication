@@ -24,5 +24,7 @@ export const stockUpdate = (product,qty,flag) => {
 export const priceUpdate = (product) => {
     return axios.put(PRODUCT_URL, product);
 }
-
+export const getProductsByVendor = (vendorId) => {
+    return axios.get(PRODUCT_URL+'/vendor/'+vendorId);
+}
 

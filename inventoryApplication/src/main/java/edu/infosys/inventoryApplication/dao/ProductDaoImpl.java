@@ -50,6 +50,12 @@ public class ProductDaoImpl implements ProductDao {
 	public List<Product> showAllProducts() {
 		return repository.findAll();
 	}
+	
+	@Override
+	public List<Product> findProductsByVendorId(String vendorId) {
+		return repository.findByVendorId(vendorId);
+	}
+
 	@Override
    public Double findReorderLevelByProductId(String id){
 	return repository.findReorderLevelByProductId(id);
