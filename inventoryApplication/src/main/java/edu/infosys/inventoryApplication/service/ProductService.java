@@ -33,16 +33,4 @@ public class ProductService {
 		product.setSalesPrice(salesPrice);
 		return product;
 	}
-	
-	public String stockChecking(Product product) {
-		double stock=product.getStock();
-		double rol=product.getReorderLevel();
-		Boolean answer=false;
-		if(stock>rol)
-			answer=true;
-		else
-			answer=false;
-	return answer.toString();
-		
-	}
 }

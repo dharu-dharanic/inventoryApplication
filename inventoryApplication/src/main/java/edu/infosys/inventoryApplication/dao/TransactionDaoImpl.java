@@ -1,12 +1,14 @@
 package edu.infosys.inventoryApplication.dao;
 
 import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
 import edu.infosys.inventoryApplication.bean.ProductSales;
 import edu.infosys.inventoryApplication.bean.Transaction;
+import edu.infosys.inventoryApplication.exception.ResourceNotFoundException;
 
 @Repository
 @Service 
@@ -28,9 +30,10 @@ public class TransactionDaoImpl implements TransactionDao {
     }
 
     
-    @Override
+   @Override
     public Transaction findTransactionById(Long id) {
-        return repository.findById(id).orElse(null);
+        return repository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("Transaction not found: " + id));
     }
 
     

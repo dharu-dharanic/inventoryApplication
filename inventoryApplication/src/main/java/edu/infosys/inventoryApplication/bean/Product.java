@@ -2,17 +2,31 @@ package edu.infosys.inventoryApplication.bean;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.PositiveOrZero;
 
 @Entity
 public class Product {
 	@Id
 	private String productId;
+
+	@NotBlank(message = "productName is required")
 	private String productName;
+
+	@NotBlank(message = "sku is required")
 	private String sku;
+
+	@PositiveOrZero(message = "purchasePrice cannot be negative")
 	private Double purchasePrice;
+
 	private Double salesPrice;
+
+	@PositiveOrZero(message = "reorderLevel cannot be negative")
 	private Double reorderLevel;
+
+	@PositiveOrZero(message = "stock cannot be negative")
 	private Double stock;
+	
 	private String vendorId;
 	private Boolean status;
 	

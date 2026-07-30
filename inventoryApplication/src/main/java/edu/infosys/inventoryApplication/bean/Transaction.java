@@ -2,16 +2,28 @@ package edu.infosys.inventoryApplication.bean;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Positive;
+import jakarta.validation.constraints.PositiveOrZero;
 
 @Entity
 public class Transaction {
 
     @Id
     private Long transactionId;
+
+    @NotBlank(message = "transactionType is required")
     private String transactionType;
+
+    @NotBlank(message = "productId is required")
     private String productId;
+
+    @PositiveOrZero(message = "rate cannot be negative")
     private Double rate;
+
+    @Positive(message = "quantity must be greater than zero")
     private Double quantity;
+    
     private Double transactionValue;
     private String userId;
     private String transactionDate;

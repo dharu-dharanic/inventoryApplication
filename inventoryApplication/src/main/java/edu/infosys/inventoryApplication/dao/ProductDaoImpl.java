@@ -7,6 +7,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
 import edu.infosys.inventoryApplication.bean.Product;
+import edu.infosys.inventoryApplication.exception.ResourceNotFoundException;
 
 @Repository 
 @Service 
@@ -19,13 +20,15 @@ public class ProductDaoImpl implements ProductDao {
 	public void save(Product product) {
 		repository.save(product);
 	}
-	@Override
-	public Product findProductById(String id) {
-		return repository.findById(id).get();
-	}
 	
 	@Override
-	public String generateId() {
+	public Product findProductById(String id) {
+		return repository.findById(id)
+				.orElseThrow(() -> new ResourceNotFoundException("Product not found: " + id));
+	}
+		
+	@Override
+	public synchronized String generateId() {
 		String id=repository.findMaxProductId();
 		if(id==null)
 			id="P10001";

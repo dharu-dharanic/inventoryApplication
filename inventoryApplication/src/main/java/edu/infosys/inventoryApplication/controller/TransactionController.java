@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.*;
 import edu.infosys.inventoryApplication.bean.ProductSales;
 import edu.infosys.inventoryApplication.bean.Transaction;
 import edu.infosys.inventoryApplication.dao.TransactionDao;
+import jakarta.validation.Valid;
+import edu.infosys.inventoryApplication.service.InventoryTransactionService;
 
 @RestController
 @RequestMapping("/inventory/")
@@ -19,10 +21,20 @@ public class TransactionController {
     @Autowired
     private TransactionDao transactionDao;
 
+    @Autowired
+    private InventoryTransactionService inventoryTransactionService;
+
     
     @PostMapping("/transaction")
-    public void saveTransaction(@RequestBody Transaction transaction) {
+    public void saveTransaction(@Valid @RequestBody Transaction transaction) {
         transactionDao.saveTransaction(transaction);
+    }
+    
+    // Preferred over the endpoint above: records the transaction and updates
+    // product stock in a single atomic operation. flag: 1 = IN, 2 = OUT
+    @PostMapping("/transaction/process/{flag}")
+    public Transaction processTransaction(@Valid @RequestBody Transaction transaction, @PathVariable int flag) {
+        return inventoryTransactionService.processTransaction(transaction, flag);
     }
 
     

@@ -1,6 +1,7 @@
 package edu.infosys.inventoryApplication.controller;
 
 import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import edu.infosys.inventoryApplication.bean.Product;
 import edu.infosys.inventoryApplication.dao.ProductDao;
 import edu.infosys.inventoryApplication.service.ProductService;
+import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("/inventory/")
@@ -33,7 +35,7 @@ public class ProductController {
 		}
 	
 	@PostMapping("/product")
-	public void saveNewProduct(@RequestBody Product product) {
+	public void saveNewProduct(@Valid @RequestBody Product product) {
 		 Product finalProduct=service.setSalesPrice(product);
 		 productDao.save(finalProduct);
 	}
@@ -50,13 +52,13 @@ public class ProductController {
 	}
 	
 	@PutMapping("/product/{qty}/{flag}")
-	public void editProductStock(@RequestBody Product product,@PathVariable double qty, @PathVariable int flag) {
+	public void editProductStock(@Valid @RequestBody Product product,@PathVariable double qty, @PathVariable int flag) {
 		Product  updatedProduct=service.stockEdit(product,qty,flag);
 		productDao.save(updatedProduct);
 	}
 	
 	@PutMapping("/product")
-	public void editProductPrice(@RequestBody Product product) {
+	public void editProductPrice(@Valid @RequestBody Product product) {
 		Product updatedProduct=service.setSalesPrice(product);
 		productDao.save(updatedProduct);
 	}
