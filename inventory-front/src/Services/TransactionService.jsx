@@ -1,7 +1,8 @@
 import axios from "axios";
+const BASE_URL = import.meta.env.VITE_API_URL;
 
-const TRANSACTION_URL = "http://localhost:9898/inventory/transaction";
-const ANA_URL="http://localhost:9898/inventory/analysis";
+const TRANSACTION_URL = `${BASE_URL}/inventory/transaction`;
+const ANA_URL = `${BASE_URL}/inventory/analysis`;
 
 export const saveTransaction = (transaction) => {
   return axios.post(TRANSACTION_URL, transaction);

@@ -1,8 +1,9 @@
 import axios from 'axios';
  
-const SKU_URL='http://localhost:9898/inventory/SKU'
-const ID_URL='http://localhost:9898/inventory/all-ids'
+const BASE_URL = import.meta.env.VITE_API_URL;
 
+const SKU_URL = `${BASE_URL}/inventory/SKU`;
+const ID_URL = `${BASE_URL}/inventory/all-ids`;
 export const save = (sku) => {
     return axios.post(SKU_URL, sku);
 }

@@ -1,7 +1,7 @@
-import axios from 'axios';
+const BASE_URL = import.meta.env.VITE_API_URL;
 
-const PRODUCT_URL='http://localhost:9898/inventory/product';
-const ID_URL='http://localhost:9898/inventory/id-gen';
+const PRODUCT_URL = `${BASE_URL}/inventory/product`;
+const ID_URL = `${BASE_URL}/inventory/id-gen`;
  
 export const addProduct = (product) => {
     return axios.post(PRODUCT_URL,product);

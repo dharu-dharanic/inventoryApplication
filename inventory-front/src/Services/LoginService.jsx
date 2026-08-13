@@ -1,7 +1,9 @@
 import axios from 'axios';
  
-const LOGIN_URL='http://localhost:9898/inventory/login'
-const ROLE_URL='http://localhost:9898/inventory/role'
+const BASE_URL = import.meta.env.VITE_API_URL;
+
+const LOGIN_URL = `${BASE_URL}/inventory/login`;
+const ROLE_URL = `${BASE_URL}/inventory/role`;
  
 export const registerNewUser = (user) => {
     return axios.post(LOGIN_URL, user);
