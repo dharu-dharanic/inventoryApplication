@@ -4,7 +4,7 @@ A full-stack inventory management application built with Spring Boot on the back
 
 ## Demo
 
-▶️ [Watch Demo Video](https://drive.google.com/file/d/1Q6t4C2BZ3_UAVyork-tMIJqhEByV9Txe/view?usp=sharing)
+▶️ [Live At](https://smartshelf-ashen.vercel.app/)
 
 
 ## Tech Stack
