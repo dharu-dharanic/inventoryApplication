@@ -1,5 +1,5 @@
 import axios from "axios";
-const BASE_URL = import.meta.env.VITE_API_URL;
+const BASE_URL = process.env.REACT_APP_API_URL;
 
 const TRANSACTION_URL = `${BASE_URL}/inventory/transaction`;
 const ANA_URL = `${BASE_URL}/inventory/analysis`;

@@ -1,6 +1,6 @@
 import axios from 'axios';
  
-const BASE_URL = import.meta.env.VITE_API_URL;
+const BASE_URL = process.env.REACT_APP_API_URL;
 
 const LOGIN_URL = `${BASE_URL}/inventory/login`;
 const ROLE_URL = `${BASE_URL}/inventory/role`;
