@@ -15,10 +15,10 @@ const AllProductAnalysis = () => {
   const [productSale, setProductSale] = useState([]);
 
   const setProductSalesData = () => {
-    fetch("http://localhost:9898/inventory/analysis")
+    fetch(`${import.meta.env.VITE_API_URL}/inventory/analysis`)
       .then((res) => res.json())
       .then((data) => {
-        fetch("http://localhost:9898/inventory/product")
+        fetch(`${import.meta.env.VITE_API_URL}/inventory/product`)
           .then((res2) => res2.json())
           .then((productList) => {
             const formatted = Object.entries(data).map(([name, sales]) => {
