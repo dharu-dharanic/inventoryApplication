@@ -15,7 +15,7 @@ import edu.infosys.inventoryApplication.service.InventoryTransactionService;
 
 @RestController
 @RequestMapping("/inventory/")
-@CrossOrigin(origins = "http://localhost:3838")
+@CrossOrigin(origins = {"http://localhost:3838", "https://smartshelf-ashen.vercel.app"})
 public class TransactionController {
 
     @Autowired

@@ -17,10 +17,9 @@ import edu.infosys.inventoryApplication.bean.Product;
 import edu.infosys.inventoryApplication.dao.ProductDao;
 import edu.infosys.inventoryApplication.service.ProductService;
 import jakarta.validation.Valid;
-
 @RestController
 @RequestMapping("/inventory/")
-@CrossOrigin(origins = "http://localhost:3838")
+@CrossOrigin(origins = {"http://localhost:3838", "https://smartshelf-ashen.vercel.app"})
 public class ProductController {
 	@Autowired
 	private ProductService service;

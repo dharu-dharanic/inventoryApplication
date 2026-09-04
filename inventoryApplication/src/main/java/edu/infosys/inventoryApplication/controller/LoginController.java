@@ -15,14 +15,14 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
 import edu.infosys.inventoryApplication.bean.InventoryUser;
 import edu.infosys.inventoryApplication.config.EncoderConfig;
 import edu.infosys.inventoryApplication.service.InventoryUserService;
 
 @RestController
 @RequestMapping("/inventory/")
-@CrossOrigin(origins = "http://localhost:3838")
- 
+@CrossOrigin(origins = {"http://localhost:3838", "https://smartshelf-ashen.vercel.app"})
 public class LoginController {
 	@Autowired
 	private InventoryUserService service;

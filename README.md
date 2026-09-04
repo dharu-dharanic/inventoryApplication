@@ -4,7 +4,7 @@ A full-stack inventory management application built with Spring Boot on the back
 
 ## Demo
 
-▶️ [Live At](https://smartshelf-ashen.vercel.app/)
+▶️ [Live At](https://smartshelf-ashen.vercel.app/) https://smartshelf-ashen.vercel.app/
 
 
 ## Tech Stack
@@ -96,7 +96,7 @@ Run the Spring Boot application:
 mvn spring-boot:run
 ```
 
-Backend starts on `http://localhost:8080`
+Backend starts on `http://localhost:9898`
 
 ### Frontend Setup
 
@@ -106,7 +106,7 @@ npm install
 npm start
 ```
 
-Open `http://localhost:3000` in your browser.
+Open `http://localhost:3838` in your browser.
 
 
 ## Author
